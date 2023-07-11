@@ -1,0 +1,36 @@
+--Clouds Hub REV
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Clouds Hub REV", HidePremium = false, SaveConfig = true, ConfigFolder = "Clouds Hub REV"})
+-- Home
+
+local HomeTab = Window:MakeTab({
+	Name = "Home",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+HomeTab:AddParagraph("Welcome to Cloud's Hub revamped","idk what to put here lmfao")
+-- Universal
+
+local UniversalTab = Window:MakeTab({
+	Name = "Universal",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+UniversalTab:AddParagraph("Universal Tab Information","Here you can find scripts that will work in almost all games.")
+
+UniversalTab:AddButton({
+	Name = "Button!",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+
+
+--Ending the lib
+OrionLib:Init()
