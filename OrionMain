@@ -43,19 +43,6 @@ UniversalTab:AddButton({
 })
 
 UniversalTab:AddSlider({
-	Name = "FPS Cap",
-	Min = 10,
-	Max = 60,
-	Default = 60,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "FPS",
-	Callback = function(Value)
-		setfpscap(Value)
-	end    
-})
-
-UniversalTab:AddSlider({
 	Name = "Walkspeed",
 	Min = 1,
 	Max = 500,
@@ -68,6 +55,25 @@ UniversalTab:AddSlider({
 	end    
 })
 
+UniversalTab:AddButton({
+	Name = "Reset Walkspeed",
+	Callback = function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+  	end    
+})
+
+UniversalTab:AddSlider({
+	Name = "FPS Cap",
+	Min = 10,
+	Max = 60,
+	Default = 60,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "FPS",
+	Callback = function(Value)
+		setfpscap(Value)
+	end    
+})
 
 --Ending the lib
 OrionLib:Init()
