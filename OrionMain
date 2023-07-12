@@ -2,7 +2,7 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Clouds Hub REV", HidePremium = false, SaveConfig = true, ConfigFolder = "Clouds Hub REV"})
+local Window = OrionLib:MakeWindow({Name = "Clouds Hub REV", HidePremium = false,IntroEnabled= false, SaveConfig = true, ConfigFolder = "Clouds Hub REV"})
 -- Home
 
 local HomeTab = Window:MakeTab({
@@ -23,13 +23,50 @@ local UniversalTab = Window:MakeTab({
 UniversalTab:AddParagraph("Universal Tab Information","Here you can find scripts that will work in almost all games.")
 
 UniversalTab:AddButton({
-	Name = "Button!",
+	Name = "Infinite Yield [ADMIN]",
 	Callback = function()
-      		print("button pressed")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
   	end    
 })
 
+UniversalTab:AddButton({
+	Name = "Simple Spy",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
+        OrionLib:MakeNotification({
+	Name = "Simple Spy executed",
+	Content = "Simple Spy is ready to be used",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+  	end    
+})
 
+UniversalTab:AddSlider({
+	Name = "FPS Cap",
+	Min = 10,
+	Max = 60,
+	Default = 60,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "FPS",
+	Callback = function(Value)
+		setfpscap(Value)
+	end    
+})
+
+UniversalTab:AddSlider({
+	Name = "Walkspeed",
+	Min = 1,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+	end    
+})
 
 
 --Ending the lib
